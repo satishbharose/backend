@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "coupon")
 public class Coupon {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
