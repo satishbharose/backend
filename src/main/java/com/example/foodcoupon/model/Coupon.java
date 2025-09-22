@@ -1,10 +1,19 @@
 package com.example.foodcoupon.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToOne;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "coupon")
+@Data
+@NoArgsConstructor
 public class Coupon {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,18 +24,4 @@ public class Coupon {
 
     @ManyToOne
     private User user;
-
-    public Coupon() {}
-    public Long getId(){return id;}
-    public void setId(Long id){this.id=id;}
-    public String getCode(){return code;}
-    public void setCode(String code){this.code=code;}
-    public Double getValue(){return value;}
-    public void setValue(Double value){this.value=value;}
-    public boolean isUsed(){return used;}
-    public void setUsed(boolean used){this.used=used;}
-    public LocalDate getIssuedAt(){return issuedAt;}
-    public void setIssuedAt(LocalDate issuedAt){this.issuedAt=issuedAt;}
-    public User getUser(){return user;}
-    public void setUser(User user){this.user=user;}
 }
