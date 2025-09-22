@@ -22,6 +22,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(new AntPathRequestMatcher("/api/auth/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/h2-console/**", null, true)).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers
