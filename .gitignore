@@ -1,7 +1,6 @@
 # .folders ignore
 /.idea/
-/target/classes/
 
 
-# .class files ignore
-*.class
+# Ignore all .class files in target/
+target/
